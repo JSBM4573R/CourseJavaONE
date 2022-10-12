@@ -4,7 +4,7 @@ public class ControlException {
 
   public static void main(String[] args) {
     System.out.println("Inicio Main");
-    methodOne();
+    methodControl();
     System.out.println("Fin Main");
   }
 
@@ -15,8 +15,8 @@ public class ControlException {
    * Se debe crear una exception acorde a la posibilidad de ocurriencia de un error.
    * Ademas se debe mostrar el Stack Trace para exponer la linea de error.
    */
-  private static void methodOne() {
-    System.out.println("Inicio metodo Uno");
+  private static void methodControl() {
+    System.out.println("Inicio metodo Control");
     for (int i = 0; i < 3; i++) {
       System.out.println(i);
       try {
@@ -24,8 +24,9 @@ public class ControlException {
         System.out.println(result);
       } catch (ArithmeticException e) {
         e.printStackTrace();
+        System.out.println(e.getMessage());
       }
     }
-    System.out.println("Fin metodo Uno");
+    System.out.println("Fin metodo Control");
   }
 }

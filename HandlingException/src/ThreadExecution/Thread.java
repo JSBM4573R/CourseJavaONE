@@ -4,7 +4,7 @@ public class Thread {
 
   public static void main(String[] args) {
     System.out.println("Inicio Main");
-    methodOne();
+    methodThread();
     System.out.println("Fin Main");
   }
 
@@ -15,13 +15,13 @@ public class Thread {
    * se rompio el codigo.
    * En este caso como no se maneja la exepcion el codigo no continua su ejecucion.
    */
-  private static void methodOne() {
-    System.out.println("Inicio metodo Uno");
+  private static void methodThread() {
+    System.out.println("Inicio metodo Thread");
     for (int i = 0; i < 3; i++) {
       System.out.println(i);
       int result = i / 0; //Division intensional entre 0 para provocar un Error
       System.out.println(result);
     }
-    System.out.println("Fin metodo Uno");
+    System.out.println("Fin metodo Thread");
   }
 }
