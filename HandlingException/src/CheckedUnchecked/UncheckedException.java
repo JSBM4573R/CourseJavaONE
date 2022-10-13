@@ -1,22 +1,22 @@
 package CheckedUnchecked;
 
-public class CustomException {
+public class UncheckedException {
 
   public static void main(String[] args) {
     System.out.println("Inicio Main");
     try {
       methodCustomException();
-    } catch (MyException ex) {
+    } catch (MyExceptionUnchecked ex) {
       ex.printStackTrace();
     }
     System.out.println("Fin Main");
   }
 
   /**
-   * Este metodo contiene el lenazamiento de la Excepcion creada en la clase MyException
+   * Este metodo contiene el lanzamiento de la Excepcion creada en la clase MyExceptionUnchecked
    */
   private static void methodCustomException() {
     System.out.println("Inicio metodo CustomException");
-    throw new MyException("Mi excepcion fue lanzada");
+    throw new MyExceptionUnchecked("Mi excepcion fue lanzada");
   }
 }
