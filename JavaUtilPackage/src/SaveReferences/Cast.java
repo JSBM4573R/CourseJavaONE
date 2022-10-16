@@ -1,5 +1,12 @@
 package SaveReferences;
 
+import Resources.Cuenta;
+import Resources.CuentaAhorros;
+import Resources.CuentaCorriente;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cast {
 
   /**
@@ -51,5 +58,8 @@ public class Cast {
     CuentaAhorros ca2 = new CuentaAhorros();
     Cuenta cuentaAhorros = (Cuenta) ca2;
     System.out.println(cuentaAhorros.type());
+
+    List<CuentaAhorros> list = new ArrayList<>();
+
   }
 }
