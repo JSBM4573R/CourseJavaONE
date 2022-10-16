@@ -1,6 +1,6 @@
 package ApplyingExceptions;
 
-public class Appying {
+public class Applying {
 
   public static void main(String[] args) {
     Cuenta cuenta = new Cuenta();
