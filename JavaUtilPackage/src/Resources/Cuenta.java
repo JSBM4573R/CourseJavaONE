@@ -4,6 +4,8 @@ public abstract class Cuenta implements Comparable<Cuenta> {
 
   private String number;
 
+  private double saldo;
+
   public abstract String type();
 
   public String getNumber() {
@@ -12,6 +14,14 @@ public abstract class Cuenta implements Comparable<Cuenta> {
 
   public void setNumber(String number) {
     this.number = number;
+  }
+
+  public double getSaldo() {
+    return saldo;
+  }
+
+  public void setSaldo(double saldo) {
+    this.saldo = saldo;
   }
 
   public boolean esIgual(Cuenta cuenta) {
@@ -28,13 +38,12 @@ public abstract class Cuenta implements Comparable<Cuenta> {
   public String toString() {
     return "Cuenta{" +
         "number='" + number + '\'' +
+        ", saldo=" + saldo +
         '}';
   }
 
   @Override
   public int compareTo(Cuenta o) {
-    Integer thisNumberCast = Integer.valueOf(this.number);
-    Integer numberOCast = Integer.valueOf(o.getNumber());
-    return Integer.compare(thisNumberCast, numberOCast);
+    return Double.compare(this.saldo, o.getSaldo());
   }
 }
