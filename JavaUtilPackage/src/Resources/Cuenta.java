@@ -1,6 +1,6 @@
 package Resources;
 
-public abstract class Cuenta {
+public abstract class Cuenta implements Comparable<Cuenta> {
 
   private String number;
 
@@ -29,5 +29,12 @@ public abstract class Cuenta {
     return "Cuenta{" +
         "number='" + number + '\'' +
         '}';
+  }
+
+  @Override
+  public int compareTo(Cuenta o) {
+    Integer thisNumberCast = Integer.valueOf(this.number);
+    Integer numberOCast = Integer.valueOf(o.getNumber());
+    return Integer.compare(thisNumberCast, numberOCast);
   }
 }

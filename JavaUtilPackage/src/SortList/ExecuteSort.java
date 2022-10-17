@@ -5,6 +5,7 @@ import Resources.CuentaAhorros;
 import Resources.CuentaCorriente;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -46,6 +47,16 @@ public class ExecuteSort {
       System.out.println(cuenta.getNumber());
     }
 
+    //Despues de implementar la interfaz Comparable<T> podemos usar el metodo sort de Collections la cual recibe un orden natural
+    Collections.sort(cuentaList);
+
+    System.out.println("<<< Despues de ordenar por orden Natural >>>");
+
+    for (Cuenta cuenta : cuentaList) {
+      System.out.println(cuenta.getNumber());
+    }
+
+
   }
 }
 
@@ -65,5 +76,18 @@ class OrdenadorPorNumeroCuenta implements Comparator<Cuenta> {
     } else {
       return -1;
     }
+  }
+}
+
+/**
+ * Orden natural implementando la interfaz Comparable<T> en la Clase Cuenta
+ */
+class OrdenarPorOrdenNatural implements Comparator<Cuenta> {
+  @Override
+  public int compare(Cuenta o1, Cuenta o2) {
+    Integer numberO1Cast = Integer.valueOf(o1.getNumber());
+    Integer numberO2Cast = Integer.valueOf(o2.getNumber());
+    //Forma Wrapper
+    return Integer.compare(numberO1Cast, numberO2Cast);
   }
 }
