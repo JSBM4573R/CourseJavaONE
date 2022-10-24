@@ -49,12 +49,10 @@ public class Lambda {
     //Uso de lambdas en foreach
 
     //Implemento el consumer que recibe un solo generics en este caso un Objeto de tipo Cuenta
-    cuentaList.forEach((Cuenta cuenta) -> {
-      System.out.println(cuenta);
-    });
+    cuentaList.forEach(cuenta -> System.out.println(cuenta));
 
     //Segundo metodo mas abreviado
-    cuentaList.forEach(cuenta -> System.out.println(cuenta));
+    cuentaList.forEach(System.out::println);
 
   }
 }
